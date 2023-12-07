@@ -16,7 +16,7 @@ public class RationalFraction {
 		return a + b;
 	}
 	
-	public RationalFraction() {
+	public RationalFraction() throws ZeroDenomException {
 		this(0, 1);
 	}
 	
@@ -47,7 +47,7 @@ public class RationalFraction {
 		}
 	}
 	
-	public RationalFraction add(RationalFraction fraction) {
+	public RationalFraction add(RationalFraction fraction) throws ZeroDenomException {
 		
 		int b1 = b;
 		int b2 = fraction.b;
@@ -64,37 +64,37 @@ public class RationalFraction {
 		return summedF;
 	}
 	
-	public void add2(RationalFraction fraction) {
+	public void add2(RationalFraction fraction) throws ZeroDenomException {
 		RationalFraction summedF = this.add(fraction);
 		a = summedF.a;
 		b = summedF.b;
 	}
 	
-	public RationalFraction sub(RationalFraction fraction) {
+	public RationalFraction sub(RationalFraction fraction) throws ZeroDenomException {
 		return this.add(new RationalFraction(-fraction.a, fraction.b));
 	}
 	
-	public void sub2(RationalFraction fraction) {
+	public void sub2(RationalFraction fraction) throws ZeroDenomException {
 		this.add2(new RationalFraction(-fraction.a, fraction.b));
 	}
 	
-	public RationalFraction mult(RationalFraction fraction) {
+	public RationalFraction mult(RationalFraction fraction) throws ZeroDenomException {
 		RationalFraction multipliedF = new RationalFraction(a * fraction.a, b * fraction.b);
 		multipliedF.reduce();
 		return multipliedF;
 	}
 	
-	public void mult2(RationalFraction fraction) {
+	public void mult2(RationalFraction fraction) throws ZeroDenomException {
 		RationalFraction multipliedF = this.mult(fraction);
 		a = multipliedF.a;
 		b = multipliedF.b;
 	}
 	
-	public RationalFraction div(RationalFraction fraction) {
+	public RationalFraction div(RationalFraction fraction) throws ZeroDenomException {
 		return this.mult(new RationalFraction(fraction.b, fraction.a));
 	}
 	
-	public void div2(RationalFraction fraction) {
+	public void div2(RationalFraction fraction) throws ZeroDenomException {
 		this.mult2(new RationalFraction(fraction.b, fraction.a));
 	}
 	
@@ -122,6 +122,8 @@ public class RationalFraction {
 			return "0";
 		} else if (a == b) {
 			return "1";
+		} else if (b == 1) {
+			return a;
 		}
 		return a + "/" + b;
 	}
