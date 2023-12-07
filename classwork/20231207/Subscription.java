@@ -15,5 +15,9 @@ public class Subscription {
 	public int getSecondId() {
 		return user2_id;
 	}
+	
+	public String toString() {
+		return "User " + user1_id + " subscribes " + user2_id;
+	}
 
 }
