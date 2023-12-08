@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Subscription {
 	
 	private int user1_id;
@@ -8,12 +10,9 @@ public class Subscription {
 		this.user2_id = user2_id;
 	}
 
-	public int getFirstId() {
-		return user1_id;
-	}
-	
-	public int getSecondId() {
-		return user2_id;
+	public int[] getId() {
+		int[] arr = {user1_id, user2_id};
+		return arr;
 	}
 	
 	public String toString() {
