@@ -1,23 +1,21 @@
+package models;
+
 public class Group {
 	
 	private int id;
 	private String name;
 	private String city;
+	private User admin;
 	
-	public User(int id) {
-		this.id = id;
-		name = "NoName";
-		city = "NoCity";
-	}
-	
-	public User(int id, String name, String city) {
+	public Group(int id, String name, String city, User admin) {
 		this.id = id;
 		this.name = name;
 		this.city = city;
+		this.admin = admin;
 	}
 	
 	public String toString() {
-		return "User " + id + " " + name + " from " + city;
+		return "group " + id + " " + name + " from " + city;
 	}
 	
 	public String getName() {
@@ -36,6 +34,10 @@ public class Group {
 		this.city = city;
 	}
 	
+	public User getAdmin() {
+		return admin;
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -43,4 +45,5 @@ public class Group {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 }

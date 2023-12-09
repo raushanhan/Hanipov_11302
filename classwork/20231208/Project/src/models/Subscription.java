@@ -10,9 +10,12 @@ public class Subscription {
 		this.user2 = user2;
 	}
 
-	public User[] getId() {
-		User[] arr = {user1, user2};
-		return arr;
+	public User getUser1() {
+		return user1;
+	}
+	
+	public User getUser2() {
+		return user2;
 	}
 	
 	public String toString() {
