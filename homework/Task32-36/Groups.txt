@@ -1,0 +1,6 @@
+5
+1 Cats kazan 3
+2 Itis kazan 2
+3 UI innopolis 1
+4 school44 chelny 4
+5 shrek saint-petersburg 5
